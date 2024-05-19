@@ -1,8 +1,7 @@
-from fastapi import FastAPI
+from flask import Flask
 
-app = FastAPI()
+app = Flask(__name__)
 
-
-@app.get("/gpt")
-def read_root():
-    return {"Hello": "World"}
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
